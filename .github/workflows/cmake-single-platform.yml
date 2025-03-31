@@ -14,5 +14,6 @@ jobs:
 
     steps:
     - name: ls
-      run: ls C:\
-
+      run: ls 'C:\Program Files\Microsoft Visual Studio'
+    - name: vc
+      run: ls C:\vcpkg
