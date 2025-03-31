@@ -13,6 +13,7 @@ jobs:
     runs-on: windows-2022
 
     steps:
+    - uses: ilammy/msvc-dev-cmd@v1
     - name: ls
       run: ls 'C:\Program Files (x86)\Microsoft Visual Studio\Installer'
     - name: vc
