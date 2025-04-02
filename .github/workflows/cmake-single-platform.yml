@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: ilammy/msvc-dev-cmd@v1
     - name: bash
-      run: bash --version
+      run: bash "touch test"
     - name: vc
       run: ls C:\vcpkg
