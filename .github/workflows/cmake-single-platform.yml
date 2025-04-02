@@ -15,6 +15,8 @@ jobs:
     steps:
     - uses: ilammy/msvc-dev-cmd@v1
     - name: bash
-      run: bash "touch test"
+      run: echo "touch test" >> test.sh
+    - name: bash2
+      run: bash test.sh
     - name: vc
       run: ls C:\vcpkg
