@@ -18,5 +18,7 @@ jobs:
       run: echo "touch test" >> test.sh
     - name: bash2
       run: bash test.sh
+    - name: ls
+      run: ls
     - name: vc
       run: ls C:\vcpkg
