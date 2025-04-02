@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: ilammy/msvc-dev-cmd@v1
     - name: bash
-      run: echo "touch test" >> test.sh
+      run: echo "find . -name 'test'" >> test.sh
     - name: bash2
       run: bash test.sh
     - name: ls
