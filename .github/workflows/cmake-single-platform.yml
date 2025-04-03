@@ -10,11 +10,16 @@ jobs:
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
     # You can convert this to a matrix build if you need cross-platform coverage.
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
-    #runs-on: windows-2022
-    runs-on: ubuntu-22.04
-    container:
-      image: mcr.microsoft.com/windows/servercore:ltsc2019
+    runs-on: windows-2022
     
     steps:
-    - name: ls
-      run: Powershell; ls
+    - name: vs
+      run: |
+        curl "https://download.visualstudio.microsoft.com/download/pr/7e1f1b8d-73fe-448c-a4e0-0ea481025985/110c25702bb7e40f1c04da43e99afa3d54ee5adf45225908747ac26c1104b60a/vs_BuildTools.exe" -o "vs_BuildTools.exe"
+        Start-Process -FilePath vs_BuildTools.exe -ArgumentList "--add", "Microsoft.VisualStudio.Workload.VCTools", "--includeRecommended", "--remove", "Microsoft.VisualStudio.Component.Vcpkg", "--quiet", "--wait" -Wait -PassThru
+
+    - uses: ilammy/msvc-dev-cmd@v1
+      with:
+        toolset: 14.39
+    - name: cl
+      run: cl
