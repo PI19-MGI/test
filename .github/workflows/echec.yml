@@ -1,0 +1,26 @@
+name: Test echec
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Étape susceptible d'échouer
+        run: 
+          exit 1  # simule un échec
+          
+  send-email-on-failure:
+    needs: build
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: 1
+          body: |
+            Le workflow a échoué pour le repo ${{ github.repository }}.
+            Voir les logs ici : [${{ github.run_id }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}).
+          reactions: '+1'
