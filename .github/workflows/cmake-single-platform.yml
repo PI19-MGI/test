@@ -21,5 +21,47 @@ jobs:
     - uses: ilammy/msvc-dev-cmd@v1
       with:
         toolset: 14.39
-    - name: cl
-      run: cl
+    - name: variables
+      run: |
+        $env:CommandPromptType
+        $env:DevEnvDir
+        $env:ExtensionSdkDir
+        $env:EXTERNAL_INCLUDE
+        $env:Framework40Version
+        $env:FrameworkDir
+        $env:FrameworkDIR64
+        $env:FrameworkVersion
+        $env:FrameworkVersion64
+        $env:INCLUDE
+        $env:LIB
+        $env:LIBPATH
+        $env:NETFXSDKDir
+        $env:Path
+        $env:Platform
+        $env:UCRTVersion
+        $env:UniversalCRTSdkDir
+        $env:VCIDEInstallDir
+        $env:VCINSTALLDIR
+        $env:VCToolsInstallDir
+        $env:VCToolsRedistDir
+        $env:VCToolsVersion
+        $env:VisualStudioVersion
+        $env:VS170COMNTOOLS
+        $env:VSCMD_ARG_app_plat
+        $env:VSCMD_ARG_HOST_ARCH
+        $env:VSCMD_ARG_TGT_ARCH
+        $env:VSCMD_ARG_VCVARS_VER
+        $env:VSCMD_VER
+        $env:VSINSTALLDIR
+        $env:WindowsLibPath
+        $env:WindowsSdkBinPath
+        $env:WindowsSdkDir
+        $env:WindowsSDKLibVersion
+        $env:WindowsSdkVerBinPath
+        $env:WindowsSDKVersion
+        $env:WindowsSDK_ExecutablePath_x64
+        $env:WindowsSDK_ExecutablePath_x86
+        $env:__DOTNET_ADD_64BIT
+        $env:__DOTNET_PREFERRED_BITNESS
+        $env:__VSCMD_PREINIT_PATH
+
