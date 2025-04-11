@@ -13,59 +13,8 @@ jobs:
     runs-on: windows-2019
     
     steps:
-    - name: before
-      run: Get-PSDrive
-       # Installation et mise en place de VisualStudio
-    - name: install visual studio
-      run: |
-        curl "https://download.visualstudio.microsoft.com/download/pr/7e1f1b8d-73fe-448c-a4e0-0ea481025985/a327fa967a032896e6408255db82a987a5bf91b42be26c2eaa71ebdadb0f46b8/vs_Professional.exe" -o "vs_Professional.exe" 
-        Start-Process -FilePath vs_Professional.exe -ArgumentList "--add", "Microsoft.VisualStudio.Workload.NativeDesktop", "--includeRecommended", "--remove", "Microsoft.VisualStudio.Component.Vcpkg", "--quiet", "--wait" -Wait -PassThru
-    - name: after
-      run: Get-PSDrive
-    - uses: ilammy/msvc-dev-cmd@v1
+    - uses: Jimver/cuda-toolkit@v0.2.22
+      id: cuda-toolkit
       with:
-        toolset: 14.39
-    - name: variables
-      run: |
-        $env:CommandPromptType
-        $env:DevEnvDir
-        $env:ExtensionSdkDir
-        $env:EXTERNAL_INCLUDE
-        $env:Framework40Version
-        $env:FrameworkDir
-        $env:FrameworkDIR64
-        $env:FrameworkVersion
-        $env:FrameworkVersion64
-        $env:INCLUDE
-        $env:LIB
-        $env:LIBPATH
-        $env:NETFXSDKDir
-        $env:Path
-        $env:Platform
-        $env:UCRTVersion
-        $env:UniversalCRTSdkDir
-        $env:VCIDEInstallDir
-        $env:VCINSTALLDIR
-        $env:VCToolsInstallDir
-        $env:VCToolsRedistDir
-        $env:VCToolsVersion
-        $env:VisualStudioVersion
-        $env:VS170COMNTOOLS
-        $env:VSCMD_ARG_app_plat
-        $env:VSCMD_ARG_HOST_ARCH
-        $env:VSCMD_ARG_TGT_ARCH
-        $env:VSCMD_ARG_VCVARS_VER
-        $env:VSCMD_VER
-        $env:VSINSTALLDIR
-        $env:WindowsLibPath
-        $env:WindowsSdkBinPath
-        $env:WindowsSdkDir
-        $env:WindowsSDKLibVersion
-        $env:WindowsSdkVerBinPath
-        $env:WindowsSDKVersion
-        $env:WindowsSDK_ExecutablePath_x64
-        $env:WindowsSDK_ExecutablePath_x86
-        $env:__DOTNET_ADD_64BIT
-        $env:__DOTNET_PREFERRED_BITNESS
-        $env:__VSCMD_PREINIT_PATH
+          cuda: '12.1.0'
 
