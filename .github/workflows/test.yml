@@ -5,6 +5,10 @@ name: Test
 on:
   workflow_dispatch:
 
+env:
+  VCPKG_ROOT:  '${{ github.workspace }}/../vcpkg'
+  VCPKG_COMMIT: "782ccc18d8b819cdef6794a6c03eb3d9f7cd04aa"
+
 jobs:
   build:
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
@@ -13,13 +17,13 @@ jobs:
     runs-on: windows-2019
     
     steps:
-    #- uses: Jimver/cuda-toolkit@v0.2.22
-     # id: cuda-toolkit
+    #- name: Setup anew (or from cache) vcpkg (and does not build any package)
+     # uses: lukka/run-vcpkg@v11.5
       #with:
-       #   cuda: '12.1.0'
-        #  use-github-cache: false
+       # vcpkgDirectory: '${{ github.workspace }}/../vcpkg'
+        #vcpkgGitCommitId: ${{ env.VCPKG_COMMIT }}
 
-    - name: cuda
+    - name: vcpk
       run: |
-        curl "https://developer.download.nvidia.com/compute/cuda/12.1.0/network_installers/cuda_12.1.0_windows_network.exe" -o "cuda_12.1.0_windows_network.exe"
-        Start-Process -FilePath cuda_12.1.0_windows_network.exe -ArgumentList "-s" -Wait -PassThru
+        git clone https://github.com/microsoft/vcpkg.git
+        ./vcpkg/bootstrap.bat
