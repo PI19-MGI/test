@@ -28,4 +28,4 @@ jobs:
         git clone https://github.com/microsoft/vcpkg.git
         ls
         ls vcpkg
-        ./vcpkg/bootstrap.bat
+        ./vcpkg/bootstrap-vcpkg.bat
