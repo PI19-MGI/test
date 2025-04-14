@@ -17,13 +17,17 @@ jobs:
     runs-on: windows-2019
     
     steps:
-    - name: Setup anew (or from cache) vcpkg (and does not build any package)
-      uses: lukka/run-vcpkg@v11.5
+    # Installation et mise en place de VisualStudio
+    - name: install visual studio
+      run: |
+        curl "https://download.visualstudio.microsoft.com/download/pr/7e1f1b8d-73fe-448c-a4e0-0ea481025985/a327fa967a032896e6408255db82a987a5bf91b42be26c2eaa71ebdadb0f46b8/vs_Professional.exe" -o "vs_Professional.exe" 
+        Start-Process -FilePath vs_Professional.exe -ArgumentList "--add", "Microsoft.VisualStudio.Workload.NativeDesktop", "--includeRecommended", "--remove", "Microsoft.VisualStudio.Component.Vcpkg", "--quiet", "--wait" -Wait -PassThru
+    - uses: ilammy/msvc-dev-cmd@v1
       with:
-        vcpkgDirectory: '${{ github.workspace }}/../vcpkg'
-        vcpkgGitCommitId: ${{ env.VCPKG_COMMIT }}
+        toolset: 14.39
 
-    #- name: vcpkg
-     # run: |
-      #  git clone https://github.com/microsoft/vcpkg.git
-       # ./vcpkg/bootstrap-vcpkg.bat
+    # Installation de CUDA
+    - uses: Jimver/cuda-toolkit@v0.2.22
+      id: cuda-toolkit
+      with:
+        cuda: '12.1.0'
