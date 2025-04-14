@@ -30,4 +30,5 @@ jobs:
     - uses: Jimver/cuda-toolkit@v0.2.22
       id: cuda-toolkit
       with:
+        use-github-cache: false
         cuda: '12.1.0'
