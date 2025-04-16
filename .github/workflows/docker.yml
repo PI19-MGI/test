@@ -30,7 +30,7 @@ jobs:
         #  run: |
          #   nvcc -V
     - name: run
-      run: docker run triala4ty94.jfrog.io/docker/cuda nvcc -V
+      run: docker run triala4ty94.jfrog.io/docker/cuda systeminfo
 
     - name: after
       run: Get-PSDrive
