@@ -18,7 +18,7 @@ jobs:
     
     steps:
     - name: ping
-      run : ping -n 1 https://github.com
+      run : ping -n 1 www.github.com
     
     # Installation et mise en place de VisualStudio
     - name: install visual studio
