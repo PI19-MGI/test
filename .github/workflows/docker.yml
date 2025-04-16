@@ -18,5 +18,5 @@ jobs:
     # Installation et mise en place de VisualStudio
     - name: docker
       run: |
-        docker pull mcr.microsoft.com/windows/servercore:ltsc2019
-        docker run --rm mcr.microsoft.com/windows/servercore:ltsc2019
+        docker login -u "${{ secrets.JF_USER }}" -p "${{ secrets.JF_PASSWORD }}"
+        docker pull triala4ty94.jfrog.io/docker/cuda:latest
