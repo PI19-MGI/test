@@ -17,6 +17,9 @@ jobs:
     runs-on: windows-2019
     
     steps:
+    - name: ping
+      run : ping -n 1 https://github.com
+    
     # Installation et mise en place de VisualStudio
     - name: install visual studio
       run: |
