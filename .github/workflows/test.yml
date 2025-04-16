@@ -19,7 +19,7 @@ jobs:
     steps:
     - name: cache
       #run: echo "${{ ACTIONS_CACHE_URL }}"
-      run: echo "Hello world"
+      uses: actions/cache@v4.2.3
     # Installation et mise en place de VisualStudio
     #- name: install visual studio
      # run: |
