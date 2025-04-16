@@ -16,10 +16,12 @@ jobs:
     
     steps:
     # Installation et mise en place de VisualStudio
+    - name: before
+      run: Get-PSDrive
     - name: docker
       run: |
         docker login -u "${{ secrets.JF_USER }}" "${{ secrets.JF_URL }}" -p "${{ secrets.JF_PASSWORD }}"
         docker pull triala4ty94.jfrog.io/docker/cuda:latest
 
-    - name: test
-      run: docker run --rm triala4ty94.jfrog.io/docker/cuda:latest
+    - name: after
+      run: Get-PSDrive
