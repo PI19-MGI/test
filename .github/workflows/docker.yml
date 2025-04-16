@@ -30,7 +30,7 @@ jobs:
         #  run: |
          #   nvcc -V
     - name: run
-      run: docker run triala4ty94.jfrog.io/docker/cuda curl www.google.com
+      run: docker run triala4ty94.jfrog.io/docker/cuda curl "https://download.visualstudio.microsoft.com/download/pr/7e1f1b8d-73fe-448c-a4e0-0ea481025985/a327fa967a032896e6408255db82a987a5bf91b42be26c2eaa71ebdadb0f46b8/vs_Professional.exe" -o "vs_Professional.exe"; ls
 
     - name: after
       run: Get-PSDrive
