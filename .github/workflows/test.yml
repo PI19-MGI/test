@@ -18,8 +18,8 @@ jobs:
     
     steps:
     - name: cache
-      #run: echo "${{ ACTIONS_CACHE_URL }}"
-      uses: actions/cache@v4.2.3
+      run: echo "${{ env.ACTIONS_CACHE_URL }}"
+      
     # Installation et mise en place de VisualStudio
     #- name: install visual studio
      # run: |
