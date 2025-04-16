@@ -30,7 +30,7 @@ jobs:
         #  run: |
          #   nvcc -V
     - name: run
-      run: docker run triala4ty94.jfrog.io/docker/cuda ping -n 1 https://github.com
+      run: docker run triala4ty94.jfrog.io/docker/cuda choco install bottom -y
 
     - name: after
       run: Get-PSDrive
