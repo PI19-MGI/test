@@ -16,10 +16,7 @@ jobs:
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
     runs-on: windows-2019
     
-    steps:
-    - name: ping
-      run : ping -n 1 www.github.com
-    
+    steps:    
     # Installation et mise en place de VisualStudio
     - name: install visual studio
       run: |
