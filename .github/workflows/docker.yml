@@ -23,5 +23,12 @@ jobs:
         docker login -u "${{ secrets.JF_USER }}" "${{ secrets.JF_URL }}" -p "${{ secrets.JF_PASSWORD }}"
         docker pull triala4ty94.jfrog.io/docker/cuda:latest
 
+    - name: Run the build process with Docker
+      uses: addnab/docker-run-action@v3
+      with:
+          image: triala4ty94.jfrog.io/docker/cuda:latest
+          run: |
+            nvcc -V
+
     - name: after
       run: Get-PSDrive
