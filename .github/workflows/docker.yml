@@ -30,7 +30,7 @@ jobs:
         #  run: |
          #   nvcc -V
     - name: run
-      run: docker run triala4ty94.jfrog.io/docker/cuda systeminfo
+      run: docker run triala4ty94.jfrog.io/docker/cuda ping -n 1 www.google.com
 
     - name: after
       run: Get-PSDrive
