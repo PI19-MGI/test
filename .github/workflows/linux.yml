@@ -18,5 +18,4 @@ jobs:
     
     steps:
     # Installation et mise en place de VisualStudio
-    - name: storage
-      run: df -h
+    - name: ccache --version
