@@ -17,12 +17,11 @@ jobs:
     runs-on: windows-2019
     
     steps:
-
-    - name: install
-      run: choco install ccache -y
     
     - name: ccache
-      run: ccache --version
+      run: |
+        choco install ccache -y
+        ccache --version
       
     # Installation et mise en place de VisualStudio
     #- name: install visual studio
