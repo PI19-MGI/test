@@ -17,11 +17,13 @@ jobs:
     runs-on: windows-2019
     
     steps:
+
+    - uses: ./.github/actions/install
     
     - name: test
-      shell: bash
       run: |
-        echo $PWD
+        nvcc -V
+        cl
       
     # Installation et mise en place de VisualStudio
     #- name: install visual studio
