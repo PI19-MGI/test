@@ -18,10 +18,10 @@ jobs:
     
     steps:
     
-    - name: ccache
+    - name: test
       run: |
-        choco install ccache -y
-        ccache --version
+        gh --version
+        jq --version
       
     # Installation et mise en place de VisualStudio
     #- name: install visual studio
