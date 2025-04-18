@@ -19,9 +19,9 @@ jobs:
     steps:
     
     - name: test
+      shell: bash
       run: |
-        gh --version
-        jq --version
+        echo $PWD
       
     # Installation et mise en place de VisualStudio
     #- name: install visual studio
