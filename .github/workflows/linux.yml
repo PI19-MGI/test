@@ -22,6 +22,6 @@ jobs:
       run: |
         echo "::add-mask::filthyfansofpeanutbutter.com"
         echo "filthyfansofpeanutbutter.com"
-        "### Hello world! :rocket:" >> $env:GITHUB_STEP_SUMMARY
+        echo "### Hello world! :rocket:" >> $env:GITHUB_STEP_SUMMARY
 
 
