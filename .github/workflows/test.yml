@@ -10,6 +10,9 @@ env:
   VCPKG_COMMIT: "782ccc18d8b819cdef6794a6c03eb3d9f7cd04aa"
 
 jobs:
+  call-workflow:
+    uses: ./.github/workflows/linux.yml
+
   build:
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
     # You can convert this to a matrix build if you need cross-platform coverage.
