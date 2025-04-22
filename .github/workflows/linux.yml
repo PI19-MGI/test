@@ -10,13 +10,11 @@ env:
   VCPKG_COMMIT: "782ccc18d8b819cdef6794a6c03eb3d9f7cd04aa"
 
 jobs:
-  build:
-    # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
-    # You can convert this to a matrix build if you need cross-platform coverage.
-    # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
-    runs-on: ubuntu-22.04
-    
+  bash-example:
+    runs-on: ubuntu-latest
+    env:
+      MY_NAME: "Mona The Octocat"
     steps:
-    # Installation et mise en place de VisualStudio
-    - name: test
-      run: echo "::add-mask::Hello world"
+      - name: bash-version
+        run: echo "::add-mask::$MY_NAME"
+
