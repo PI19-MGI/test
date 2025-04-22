@@ -20,6 +20,7 @@ jobs:
     - name: Add mask
       shell: bash
       run: |
-        echo "::add-mask::filthyfansofpeanutbutter.com" 
+        echo "::add-mask::filthyfansofpeanutbutter.com"
+        echo "filthyfansofpeanutbutter.com"
 
 
