@@ -24,6 +24,6 @@ jobs:
         echo "filthyfansofpeanutbutter.com"
     - name: summary
       run: |
-        echo "### Hello world! :rocket:" >> $env:GITHUB_STEP_SUMMARY
+        echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
 
 
