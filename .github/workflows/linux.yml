@@ -18,5 +18,5 @@ jobs:
     
     steps:
     # Installation et mise en place de VisualStudio
-    - name: ccache
-      run: ccache --version
+    - name: test
+      run: echo ::add-mask::Hello world
