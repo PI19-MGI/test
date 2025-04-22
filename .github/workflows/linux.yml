@@ -17,11 +17,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Add mask
-      shell: bash
+    - name: Generate list using Markdown
       run: |
-        echo "::add-mask::filthyfansofpeanutbutter.com"
-        echo "filthyfansofpeanutbutter.com
-        "### Hello world! :rocket:" >> $env:GITHUB_STEP_SUMMARY
+        "This is the lead in sentence for the list" >> $env:GITHUB_STEP_SUMMARY
+        "" >> $env:GITHUB_STEP_SUMMARY # this is a blank line
+        "- Lets add a bullet point" >> $env:GITHUB_STEP_SUMMARY
+        "- Lets add a second bullet point" >> $env:GITHUB_STEP_SUMMARY
+        "- How about a third one?" >> $env:GITHUB_STEP_SUMMARY
 
 
