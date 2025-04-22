@@ -18,6 +18,7 @@ jobs:
 
     steps:
     - name: Add mask
+      shell: bash
       run: |
         echo "::add-mask::filthyfansofpeanutbutter.com" 
 
