@@ -4,6 +4,7 @@ name: Linux
 
 on:
   workflow_dispatch:
+  workflow_call:
 
 env:
   VCPKG_ROOT:  '${{ github.workspace }}/../vcpkg'
