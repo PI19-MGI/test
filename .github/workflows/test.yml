@@ -21,6 +21,9 @@ jobs:
     runs-on: windows-latest
     
     steps:
+    - name: aaaaah
+      run: |
+        echo '-DCMAKE_MSVC_DEBUG_INFORMATION_FORMAT:STRING="$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"'
     - name: test
       run: |
         systeminfo
