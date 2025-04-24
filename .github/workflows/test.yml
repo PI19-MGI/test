@@ -24,7 +24,7 @@ jobs:
     steps:
     - name: aaaaah
       run: |
-        echo ${{ env.A }}
+        echo "${{ env.A }}"
     - name: test
       run: |
         systeminfo
