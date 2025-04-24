@@ -18,6 +18,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: test
+      run: |
+        sudo rm -rf /opt/*
+    - name: pwsh
+      run: pwsh --version
     - name: Add mask
       shell: bash
       run: |
