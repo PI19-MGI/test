@@ -18,6 +18,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Install CUDA
+      shell: bash
+      run: |
+        sudo apt-key del 7fa2af80
+        wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-keyring_1.0-1_all.deb
+        sudo dpkg -i cuda-keyring_1.0-1_all.deb
+        sudo apt-get update; sudo apt-get install cuda-toolkit-12-1 -y
+        echo "/usr/local/cuda-12.1/bin" >> "$GITHUB_PATH"
     - name: test
       run: |
         ls -lArth /opt
