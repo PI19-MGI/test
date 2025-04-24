@@ -32,7 +32,7 @@ jobs:
         echo "/usr/local/cuda-12.1/bin" >> "$GITHUB_PATH"
     - name: test
       run: |
-        ls -lArth /opt
+        sudo rm -rf /opt/nvidia
     - name: pwsh
       run: pwsh --version
     - name: Add mask
