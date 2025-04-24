@@ -4,6 +4,11 @@ name: Test
 
 on:
   workflow_dispatch:
+    inputs:
+      type:
+        description: "Type of compilation (Debug / Release)"
+        required: true
+        type: string
 
 env:
   VCPKG_ROOT:  '${{ github.workspace }}/../vcpkg'
