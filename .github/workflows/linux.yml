@@ -32,6 +32,9 @@ jobs:
         echo "/usr/local/cuda-12.1/bin" >> "$GITHUB_PATH"
     - name: test
       run: |
+        shopt -s extglob
+        cd /opt
+        rm -rf !(microsoft)
         du -h /opt
     - name: pwsh
       run: pwsh --version
