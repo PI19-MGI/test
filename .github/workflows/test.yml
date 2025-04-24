@@ -12,7 +12,7 @@ env:
 
 jobs:
   call-workflow:
-    uses: ./.github/workflows/test/linux.yml
+    uses: ./.github/workflows/linux.yml
 
   build:
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
