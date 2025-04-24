@@ -20,7 +20,7 @@ jobs:
     steps:
     - name: test
       run: |
-        sudo rm -rf /opt/*
+        ls /opt
     - name: pwsh
       run: pwsh --version
     - name: Add mask
