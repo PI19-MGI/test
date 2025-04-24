@@ -17,16 +17,19 @@ jobs:
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
     # You can convert this to a matrix build if you need cross-platform coverage.
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
-    runs-on: windows-2019
+    #runs-on: windows-2019
+    runs-on: windows-latest
     
     steps:
-    - uses: actions/checkout@v4
-    - uses: ./.github/actions/install
-    
     - name: test
-      run: |
-        nvcc -V
-        cl
+      run: systeminfo
+    #- uses: actions/checkout@v4
+    #- uses: ./.github/actions/install
+    
+    #- name: test
+     # run: |
+      #  nvcc -V
+       # cl
       
     # Installation et mise en place de VisualStudio
     #- name: install visual studio
