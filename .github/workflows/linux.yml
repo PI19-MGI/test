@@ -20,7 +20,7 @@ jobs:
     steps:
     - name: test
       run: |
-        ll /opt
+        ls -lArth /opt
     - name: pwsh
       run: pwsh --version
     - name: Add mask
