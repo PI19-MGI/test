@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-     - name: Install all packages
+    - name: Install all packages
       shell: bash
       run: sudo apt-get install linux-libc-dev gdb pax-utils ccache pkg-config -y
     - name: Install CUDA
