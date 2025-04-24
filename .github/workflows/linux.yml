@@ -15,14 +15,13 @@ env:
 jobs:
   my-peanut-butter-job:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Install all packages
       shell: bash
       run: |
         sudo apt-get install linux-libc-dev gdb pax-utils ccache pkg-config -y
-        sudo apt-get -y install libtinfo5
     - name: Install CUDA
       shell: bash
       run: |
