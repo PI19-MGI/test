@@ -22,7 +22,9 @@ jobs:
     
     steps:
     - name: test
-      run: systeminfo
+      run: |
+        systeminfo
+        Get-WmiObject Win32_Processor | Select-Object Name, NumberOfCores, NumberOfLogicalProcessors
     #- uses: actions/checkout@v4
     #- uses: ./.github/actions/install
     
