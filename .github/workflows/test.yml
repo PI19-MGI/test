@@ -8,6 +8,7 @@ on:
 env:
   VCPKG_ROOT:  '${{ github.workspace }}/../vcpkg'
   VCPKG_COMMIT: "782ccc18d8b819cdef6794a6c03eb3d9f7cd04aa"
+  A: '-DCMAKE_MSVC_DEBUG_INFORMATION_FORMAT:STRING="$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"'
 
 jobs:
   call-workflow:
@@ -23,7 +24,7 @@ jobs:
     steps:
     - name: aaaaah
       run: |
-        echo '-DCMAKE_MSVC_DEBUG_INFORMATION_FORMAT:STRING="$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>"'
+        echo ${{ env.A }}
     - name: test
       run: |
         systeminfo
