@@ -20,7 +20,9 @@ jobs:
     steps:
     - name: Install all packages
       shell: bash
-      run: sudo apt-get install linux-libc-dev gdb pax-utils ccache pkg-config -y
+      run: |
+        sudo apt-get install linux-libc-dev gdb pax-utils ccache pkg-config -y
+        sudo apt-get -y install libtinfo5
     - name: Install CUDA
       shell: bash
       run: |
