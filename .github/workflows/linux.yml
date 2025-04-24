@@ -34,7 +34,7 @@ jobs:
       run: |
         shopt -s extglob
         cd /opt
-        rm -rf !(microsoft)
+        sudo rm -rf !(microsoft)
         du -h /opt
     - name: pwsh
       run: pwsh --version
