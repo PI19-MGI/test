@@ -11,6 +11,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: test
+        shell: bash
         run: | 
           echo "$CONFIG_ARGS"
           echo "CONFIG_ARGS=baaa" >> $GITHUB_ENV
