@@ -14,8 +14,8 @@ env:
 
 jobs:
   my-peanut-butter-job:
-    #permissions:
-     # contents: write
+    permissions:
+      contents: write
     runs-on: ubuntu-22.04
 
     steps:
