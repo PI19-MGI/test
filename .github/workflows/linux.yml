@@ -18,31 +18,15 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-    - name: Install all packages
-      shell: bash
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.PAT }}
+    - name: abcd 
       run: |
-        sudo apt-get install linux-libc-dev gdb pax-utils ccache pkg-config -y
-    - name: Install CUDA
-      shell: bash
-      run: |
-        sudo apt-key del 7fa2af80
-        wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-keyring_1.0-1_all.deb
-        sudo dpkg -i cuda-keyring_1.0-1_all.deb
-        sudo apt-get update; sudo apt-get install cuda-toolkit-12-1 -y
-        echo "/usr/local/cuda-12.1/bin" >> "$GITHUB_PATH"
-    - name: test
-      run: |
-        shopt -s extglob
-        cd /opt
-        sudo rm -rf !(microsoft)
-        du -h /opt
-    - name: pwsh
-      run: pwsh --version
-    - name: Add mask
-      shell: bash
-      run: |
-        echo "::add-mask::filthyfansofpeanutbutter.com"
-        echo "filthyfansofpeanutbutter.com"
+        echo "This is another test" >> test.txt
+        git add test.txt
+        git commit -m "github actions test"
+        git push
     - name: Generate list using Markdown
       run: |
         echo "This is the lead in sentence for the list" >> $GITHUB_STEP_SUMMARY
