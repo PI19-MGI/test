@@ -12,7 +12,9 @@ jobs:
     steps:
       - name: test
         run: | 
-          echo "CONFIG_ARGS"
+          echo "$CONFIG_ARGS"
           echo "CONFIG_ARGS=baaa" >> $GITHUB_ENV
-          printenv
+      - name: print
+        run: | 
+          echo "$CONFIG_ARGS"
           
