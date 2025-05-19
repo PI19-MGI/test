@@ -19,8 +19,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.PAT }}
     - name: abcd 
       run: |
         echo "This is another test" >> test.txt
