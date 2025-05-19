@@ -1,0 +1,18 @@
+name: test env
+
+on:
+  workflow_call:
+
+env:
+  CONFIG_ARGS: "bouh"
+  
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: | 
+          echo "CONFIG_ARGS"
+          echo "CONFIG_ARGS=baaa" >> $GITHUB_ENV
+          printenv
+          
