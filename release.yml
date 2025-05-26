@@ -1,0 +1,19 @@
+name: Creation of a release branch
+
+on:
+  workflow_dispatch:
+  create:
+
+permissions:
+  actions: write
+
+jobs:
+  test:
+    if: startsWith(github.ref, 'refs/heads/release/')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: test
+        run: |
+          git branch -a
+          echo "Hello world"
