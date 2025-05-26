@@ -4,9 +4,6 @@ on:
   workflow_dispatch:
   create:
 
-permissions:
-  actions: write
-
 jobs:
   test:
     if: startsWith(github.ref, 'refs/heads/release/')
