@@ -10,3 +10,8 @@ jobs:
     steps:
     
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 1
+        
+    - name: Restore Timestamps
+      uses: chetan/git-restore-mtime-action@v1
