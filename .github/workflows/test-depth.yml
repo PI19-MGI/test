@@ -1,0 +1,17 @@
+name: Test profondeur
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  compilation:
+    runs-on: [self-hosted, Windows, depth]
+    steps:
+    
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        
+    - name: Restore Timestamps
+      uses: chetan/git-restore-mtime-action@v1
